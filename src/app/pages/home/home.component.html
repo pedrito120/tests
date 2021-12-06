@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="card m-3" style="width: 18rem;" *ngFor="let pokemon of data">
+        <div class="card-body">
+            <p class="card-text"> {{pokemon.name | uppercase}}</p>
+        </div>
+        <img src="{{pokemon.img}}" class="card-img-top">
+        
+        <div class="d-grid gap-2">
+            <button class="btn btn-danger" (click)="agregar(pokemon)">Agregar a favoritos</button>
+            <button class="btn btn-danger" (click)="verPokemon(pokemon.position)">Ver pokemon</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center container">
+    <div class="card p-3 bg-white"><i class="fa fa-apple"></i>
+        <div class="about-product text-center mt-2"><img src="{{pokemon.sprites.front_default}}" width="250">
+            <div>
+                <h4>{{pokemon.name | uppercase}}</h4>
+            </div>
+        </div>
+        <div class="stats mt-2">
+            <div class="d-flex justify-content-between "><span>Height :</span><span>{{pokemon.height}}</span></div>
+            <div class="d-flex justify-content-between "><span>Weight :</span><span>{{pokemon.weight}}</span></div>
+            <div class="d-flex justify-content-between "><span>Experience :</span><span>{{pokemon.base_experience}}</span></div>
+        </div>
+       <div class="mt-2">
+        <div class="tv-tabs">
+            <label class="tv-tab" for="tv-tab-1">Abilities</label>
+            <label class="tv-tab" for="tv-tab-2">Moves</label>
+          </div>
+          <input class="tv-radio" id="tv-tab-1" name="tv-group" type="radio" checked="checked" />
+          <div class="tv-content">
+            <ul class="scroll">
+              <li class="list-group-item" *ngFor="let abilities of pokemon.abilities ">
+                {{abilities.ability.name}}.</li>
+            </ul>
+          </div>
+          <input class="tv-radio" id="tv-tab-2" name="tv-group" type="radio" />
+          <div class="tv-content">
+            <ul class="scroll">
+              <li class="list-group-item" *ngFor="let moves of pokemon.moves ">
+                {{moves.move.name}}.</li>
+    
+            </ul>
+          </div>
+       </div>
+    </div>
+</div>

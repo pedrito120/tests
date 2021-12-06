@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <form>
+        <p class="text-white ms-4">
+            cambiar color <input [(ngModel)]="colorsecundario" value="#ff0000" class="btn btn-outline-success" type="color" name="colorsecundario"
+                list="listacoloresperfil">
+            <button class="btn btn-outline-success " (click)="changeColor()">enviar</button>
+        </p>
+    </form>
+
+    <datalist id="listacoloresperfil">
+        <option value="#00ffff">
+        <option value="#ff00ff">
+        <option value="#ffff00">
+        <option value="#ffaa00">
+    </datalist>
+    <div class="collapse navbar-collapse center">
+        <ul class="navbar-nav ">
+            <li class="nav-item ">
+                <a class="nav-link " (click)="home()">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">|</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="favorites()">favoritos</a>
+            </li>
+        </ul>
+
+    </div>
+    <button *ngIf="!isloggedNow" class="btn btn-outline-success login" id="signin"(click)="login()"><a></a>SIGN IN</button>
+    <button *ngIf="isloggedNow" class="btn btn-outline-success login" id="signout" (click)="signout()"><a></a>SIGN OUT</button>
+</nav>
